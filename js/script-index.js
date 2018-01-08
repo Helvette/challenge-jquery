@@ -4,6 +4,10 @@ $(document).ready( function(){
 	renderHighlightedRecipes(recipesArray);
 	$(".js-back").hide();
 	$(".js-menu").show();
+	var printNews = function(element){
+		$(element).text("NUEVAS RECETAS");
+	}
+	printNews(".new-recipe");
 });
 
 
