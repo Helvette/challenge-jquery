@@ -8,7 +8,7 @@ $(document).ready( function(){
 		$(element).text("NUEVAS RECETAS");
 	}
 	printNews(".new-recipe");
-	//renderActivities(activitiesArray);
+	renderActivities(activities);
 });
 
 
@@ -33,7 +33,6 @@ function renderHighlightedRecipes(recipesArray) {
 * archivo "templates/templates-recipe.html"
 */
 function renderRecipe(recipe) {
-	console.log('Voy a pintar la receta: ', recipe);
 	var title = recipe.title;
 	var name = recipe["source"].name;
 	var imageUrl = recipe.name;
@@ -51,7 +50,6 @@ function renderRecipe(recipe) {
 					"<img src='"+ imageUrl + "'/>"+
 				"</a>";
 	$(".list-recipes").append(html);
-	console.log(imageUrl)
 }
 
 
@@ -61,7 +59,7 @@ function renderRecipe(recipe) {
 */
 function renderActivities(activitiesArray) {
 	console.log('Activities: ', activitiesArray);
-	if(activitiesArray.length < 0){
+	if(activitiesArray.length > 0){
 		$(".wrapper-message").hide();
 	}
 	for(var i=0; i < activitiesArray.length; i++){
